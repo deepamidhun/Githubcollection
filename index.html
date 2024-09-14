@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang = "en"></html>
+<head>
+    <style>
+       
+        .main-body{
+            font-family: ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+            color:rgb(17, 24, 39);
+            line-height: 28px;
+            border:1px solid rgb(206, 197, 197);
+            border-radius: 10px;
+            margin-left:350px;
+            margin-right: 350px;
+            margin-top: 80px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 50px;
+
+              }
+            
+                   
+            .Stackblitz{
+            color:white;
+            background-color: black;
+            border-radius: 5px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 12px;
+            padding-right: 10px;
+            
+        }
+
+        .code-snippet{
+            padding-top: 7px;
+            padding-bottom: 7px;
+            padding-left: 20px;
+            background-color:rgb(248, 244, 244);
+            line-height: 10px;
+            font-size:15px;
+        }
+
+        .main-body a{
+            text-decoration:none ;
+            color:black;
+                                 
+        }
+        .main-body h2{
+           
+            font-weight:450;
+                                 
+        }
+
+        .main-body h3{
+           
+            font-weight:450;
+                                 
+        }
+               
+        a:hover{
+        
+            color:rgb(87, 185, 87);
+            text-decoration:underline;
+        }
+             
+    </style>
+    <title>Content Wind</title>
+    
+    
+</head>
+
+
+<body>
+    
+    <div class = "main-body" style="display:flex; flex-direction: column;">
+ 
+        <h1 id="content-wind"><span style="font-weight: 800">Content Wind</span></h1>
+
+        <p>
+        A lightweight Nuxt theme to build a Markdown driven website, based on Nuxt Content, TailwindCSS and Iconify ✨
+        </p>
+        
+        <h2 id="features">
+            Features
+        </h2>
+
+        <ul>
+            
+            <li>Write pages in Markdown</li>
+            <li>Use layouts in Markdown pages</li>
+            <li>Enjoy meta tag generation</li>
+            <li>Generated navigation from pages</li>
+            <li>Leverage TailwindCSS Typography</li>
+            <li>Switch between light & dark mode</li>
+            <li>Access 100,000 icons from 100+ icon sets</li>
+            <li>Highlight code blocks with Shiki</li>
+            <li>Create Vue components and use them in Markdown</li>
+            <li>Deploy on any Node or Static hosting: GH Pages, Vercel, Netlify, Heroku, etc.</li>
+            <li>Live edit on Nuxt Studio</li>
+        </ul>
+
+  
+        <h2 id="setup">
+            <a href="#setup">
+                Setup
+            </a>
+          
+        </h2>
+        
+            <div style="
+                display:grid;
+                grid-template-columns: 200px 100px;">
+                
+                <a href ="" class="Stackblitz"><span style="color:white">Play online on Stackblitz</span></a>
+            </div>
+        <p>
+            Open a terminal and run the following command:
+        </p>
+
+        <p> npx nuxi init -t themes/content-wind my-website</p>
+
+        <p>Follow the instructions in the terminal and you are ready to go 🚀</p>
+
+        
+        <h2 id="usage">
+            <a href="#usage">
+                Usage
+            </a>
+        </h2>
+
+        <p>This template has some built-in features to make it as easy as 
+            possible to create a content-driven website.</p>
+
+            <h3 id="pages">
+                <a href="#pages">
+                    Pages
+                </a>
+            </h3>
+        
+            <p>Create your Markdown pages in the content/ directory:</p>
+
+        <div class="code-snippet">
+                <code>
+                    <p><span style = "font-family: 'Courier New', Courier, monospace; color:rgb(11, 106, 231); font-weight:bold;"># My title</span></p>
+                    <span emptylineplaceholder="true"></span>
+                    <p><span class="line" style="--shiki-dark:#e9eff7;--shiki-default:#24292E">This first paragraph will be treated as the page meta description.</span></p>
+                </code>
+             
+        </div>
+
+            <p>You can overwrite meta tags by using front-matter:</p>
+
+        <div class="code-snippet">
+                <code>
+                        <p><span style="color:blue">--- </span></p>
+                        <p><span>title: 'Custom title' </span></p>
+                        <p><span>description: 'Custom meta description' </span></p>
+                        <p><span>image: 'Custom image injected as `og:image`' </span></p>
+                        <p><span style="color:blue">--- </span></p>
+
+                        <p><span style = "font-family: 'Courier New', Courier, monospace; color:rgb(11, 106, 231); font-weight:bold;">#My title</span></p>
+                    <span emptylineplaceholder="true"></span>
+                    <p><span class="line" style="--shiki-dark:#f7f9fd;--shiki-default:#24292E">This first paragraph will be treated as the page meta description.</span></p>
+
+                </code>
+            
+            </div>
+        <p>This is done thanks to Nuxt Content's document-driven mode of Nuxt Content.</p>
+    
+        <h3 id="navigation">
+            <a href="#navigation">Navigation</a>
+        </h3>
+
+        <p>The navigation is generated from your pages, you can take a look at the <AppNavbar> component to see how it works.</p>
+        <p>It uses the Navigation from Nuxt Content to fetch the navigation object.</p>
+        <p>To customize the title displayed in the navigation, you can set the
+        <code>
+            "navigation.title"
+
+        </code>
+        property in the front-matter of your pages:</p>
+
+        
+          <div class="code-snippet">  
+            <code>
+                <span class="line" line="1" style = "font-family: 'Courier New', Courier, monospace; color:rgb(11, 106, 231); font-weight:bold;">---</span>
+                <p><span class="line" line="2">navigation.title: 'Home'</span></p>
+                <span class="line" line="1" style = "font-family: 'Courier New', Courier, monospace; color:rgb(11, 106, 231); font-weight:bold;">---</span>
+                <span class="line" line="4" emptylineplaceholder="true"></span>
+                <p><span class="line" line="5" style="font-family: 'Courier New', Courier, monospace; color:rgb(11, 106, 231); font-weight:bold;""># Welcome to my site</span></p>
+                <p><span class="line" line="6">With a beautiful description</span></p>
+            </code>
+        </div>
+
+        <h3 id="theme-configuration"><a href="">Theme Configuration</a></h3>
+
+        <p>You can configure Content Wind global configuration in the
+            <code class>
+                <span class="line" line="1" style = "font-family: 'Courier New', Courier, monospace; font-weight:bold;">app.config.ts</span>
+            </code> file ::  </p>
+    
+
+           <div class=" code-snippet">     
+                <code>
+                    <p>
+                        <span class="line" line="1">
+                            <span style = "color:rgb(187, 12, 12); ">interface</span>
+                            <span style = "color:rgb(71, 19, 139); ">AppConfigInput {</span>
+                         </span>
+                    </p>
+                   
+                   <p>
+                        <span class="line" line="2">
+                            <span style = "color:rgb(238, 26, 26); ">cover?:</span>
+                            <span style = "color:rgb(11, 106, 231); ">string,</span>
+                            <span style = "color:rgb(120, 122, 124); "> // default: 'cover.jpg'</span>
+                        </span> 
+                    </p>
+
+                    <p>
+                        <span class="line" line="3">
+                            <span style = "color:rgb(238, 26, 26); ">socials?:</span>
+                            <span style = "color:rgb(9, 10, 10); "> {</span>
+                        </span> 
+                    </p>
+
+                    
+                    <p>
+                        <span class="line" line="4">
+                            <span style = "color:rgb(238, 26, 26); ">    twitter?:</span>
+                            <span style = "color:rgb(15, 132, 228); ">   string</span>
+                        </span> 
+                    </p>
+
+                    <p>
+                        <span class="line" line="5">
+                            <span style = "color:rgb(238, 26, 26); ">    github?:</span>
+                            <span style = "color:rgb(15, 132, 228); ">   string</span>
+                        </span> 
+                    </p>
+
+                    <p>
+                        <span class="line" line="5">
+                            <span style = "color:rgb(238, 26, 26); ">  mastodon?:</span>
+                            <span style = "color:rgb(15, 132, 228); "> string</span>
+                        </span> 
+                    </p>
+
+                    }
+
+            <p>}</p>
+                  
+            </code>
+           </div>
+
+           <p>Example of settings Twitter and GitHub icons in the navbar:</p>
+
+           <div class=" code-snippet">     
+            <code>
+                <p>
+                    <span class="line" line="1">
+                        <span style = "color:rgb(187, 12, 12); ">export default</span>
+                        <span style = "color:rgb(71, 19, 139); ">defineAppConfig({</span>
+                     </span>
+                </p>
+               
+             
+                <p>
+                    <span class="line" line="2">
+                        <span style = color:rgb(8),8,8; >socials?:</span>
+                        <span style = color:rgb(8,8,8); > {</span>
+                    </span> 
+                </p>
+
+                
+                <p>
+                    <span class="line" line="3">
+                        <span style = color:rgb(8,8,8);>  twitter:  ' Atinux',</span>
+                    </span> 
+                </p>
+
+                <p>
+                    <span class="line" line="4">
+                        <span style = color:rgb(8,8,8); > github:  'Atinux/content-wind'</span>
+                </p>
+
+                <p>
+                    <span class="line" line="5">
+                        <span style = color:rgb(8,8,8); > mastodon:  '@atinux@webtoo.ls'</span>
+                    </span> 
+                </p>
+
+                }
+
+        <p>})</p>
+              
+          </code>
+    
+       </div>
+
+          <h3 id=""icons">
+              <a href="">Icons</a>
+          </h3>
+        
+       <p>Use any icon from icones.js.org with the 'Icon' component:</p>
+
+       <div class=" code-snippet">     
+        
+            <p>
+                <span class="line" line="1">
+                    <span style = "color:rgb(145, 3, 3); font-style: italic; ">Icon</span>
+                    <span style = "color:rgb(71, 19, 139); ">name=</span>
+                    <span style = "color:rgb(39, 34, 46); ">"ph: music-notes-fill" /></span>
+                
+                </span>
+            </p>
+        </div>
+
+        <p>You can also use it in your Markdown:</p>
+
+        <code>
+
+            <div class=" code-snippet">     
+                <p>
+                    <span class="line" line="1">
+                        <span style = "color:rgb(8,8,8); ">:icon{name="ph:music-notes-fill"}</span>
+                                  
+                    </span>
+                </p>
+            </div>
+        </code>
+
+        <p>Will result in &#9835;</p>
+        <p>Learn more on nuxt-icon documentation.</p>
+
+        <h3 id="code-highlight">
+            <a href="">Code Highlight</a>
+
+        </h3> 
+
+        <p>It supports code highlighting with Shiki and as well as different <a href="">VS Code themes</a>.</p>
+        
+        <code>
+            <div class= "code-snippet">
+                    <p>
+                    '''ts'  
+                    </p>
+
+                    <p>export default() => 'Hello Content Wind</p>
+                    <p>'''</p>
+                </div>
+        </code>
+    
+        <p>Will result in:</p>
+
+   <code>
+        <div class="code-snippet">
+            <span class="line" line="1">
+                <span style = "color: rgb(163, 45, 45);"> export default </span>
+                <span style = "color:rgb(8,8,8); ">()</span>
+                <span style = "color:rgb(163, 45, 45);">=></span>
+                <span style = "color: rgb(8,8,8);"> 'Hello Content Wind' </span>
+
+            </span>
+
+        </div>
+   </code>
+
+   <p>Updating the theme is as simple as editing your <code><span style="font-size:15px; font-weight:bold">'nuxt.config'</span></code>:</p>
+
+   <div class=" code-snippet">     
+    <code>
+        <p>
+            <span class="line" line="1">
+                <span style = "color:rgb(187, 12, 12); ">import</span>
+                <span style = "color:rgb(8,8,8); "> { defineNuxtConfig }</span>
+                <span style = "color:rgb(187, 12, 12); ">from</span>
+                <span style = "color:rgb(8,8,8); ">'nuxt'</span>
+             </span>
+        </p>
+       
+     
+        <p>
+            <span class="line" line="2">
+                <span emptylineplaceholder="true"></span>
+            </span>
+        </p>
+
+        <p>
+            <span class="line" line="3">
+                <span style = color:rgb(187,12,12);> export default</span>
+                <span style = "color:rgb(71,9,139); "> defineNuxtConfig</span>
+                <span style = "color:rgb(8,8,8); ">({</span>
+
+            </span> 
+        </p>
+
+        <p>
+            <span class="line" line="4">
+                <span style = color:rgb(8,8,8); > content: {</span>
+            </span>
+        </p>
+
+            <p><span style = "color:rgb(8,8,8); "> highlight: {</span></p>
+            <p><span style = "color:rgb(8,8,8); "> theme: 'one-dark-pro',</span></p>
+            <p>  <span style = "color:rgb(8,8,8); "> }</span></p>
+            <p><span style = "color:rgb(8,8,8); "> }</span></p>
+            <p><span style = "color:rgb(8,8,8); "> })</span></p>
+         </p>
+     
+            
+    </code>
+
+</div>
+
+        <p>Learn more in the <a href="">Content Code Highlight section</a>.</p>
+
+        <h3 id="vue-components"><a href="">Vue Components</a></h3>
+        
+        <p>Add Vue components into the <code><span style="font-size:15px; font-weight:bold">'components/content/'</span></code> directory and start using them in Markdown.</p>
+
+        <p>See the <code><span style="font-size:15px; font-weight:bold">'MarkdownBlock'</span></code> component in <code><span style="font-size:15px; font-weight:bold"><a href="">'components/content/MarkdownBlock.vue'</a></span></code>.</p>
+
+        <p>By leveraging the <code><span style="font-size:15px; font-weight:bold"><a href="">'ContentSlot'</a></span></code>component from Nuxt Content, you can use both slots and props in Markdown thanks to the MDC syntax.</p>
+           
+  
+        <h3 id="deployment"><a href="">Deployment</a></h3>
+        <a href=""><img src="https://vercel.com/button"></a>
+        <br/></br>
+        
+
+        <a href><img src="https://www.netlify.com/img/deploy/button.svg"></a>
+
+        <h3><a href="">Static Hosting</a></h3>
+
+        <p>Pre-render the website to be deployed on any static hosting:</p>
+
+        <div class="code-snippet">
+            <code>
+                <p>
+                    <span class="line" line="1">
+                        <span style = "color:rgb(76, 23, 223);">npm</span>
+                        <span style ="color: rgb(20, 10, 10);">run generate</span>
+                    </span>
+                </p>
+            </code>
+        </div>
+
+        <p>The <code><span style = "font-weight: bold;font-size:15px">'dist/'</span></code> directory is ready to be deployed (symlink to <code><span style = "font-weight: bold;font-size:15px">'.output/public'</span></code>), learn more on Nuxt docs.</p>
+  
+    <h3><a href="">Node Server</a></h3>
+    <p>Build the application for production:</p>
+
+    <div class="code-snippet">
+        <code>
+            <p>
+                <span class="line" line="1">
+                    <span style = "color:rgb(76, 23, 223);">npm</span>
+                    <span style ="color: rgb(20, 10, 10);">run build</span>
+                </span>
+            </p>
+        </code>
+    </div>
+
+    <p>Start the server in production:</p>
+
+    <div class="code-snippet">
+        <code>
+            <p>
+                <span class="line" line="1">
+                    <span style = "color:rgb(76, 23, 223);">node</span>
+                    <span style ="color: rgb(20, 10, 10);">.output/server/index.mjs</span>
+                </span>
+            </p>
+        </code>
+    </div>
+
+    <p>Learn more on Nuxt docs for more information.</p>
+    <p>You are at the end of the page, you can checkout the <a href="">about page </a>or the <a href="">GitHub repository </a>and give a &#9734;</p>
+    <p>Thanks for reading and happy writing, Atinux.</p>
+
+    </div>
+        
+    
+</body>
+
